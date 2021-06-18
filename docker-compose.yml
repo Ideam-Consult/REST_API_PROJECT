@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  postgres:
+    build:
+      args:
+        version: 0.0.1
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_USER=Phetho
+      - POSTGRES_DB=some_db
+      - POSTGRES_PASSWORD=1234
+
+    networks:
+      - back-tier
+    
+    ports:
+      - '5432:5432'
+networks:
+  back-tier:
+    driver: bridge
