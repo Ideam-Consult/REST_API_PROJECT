@@ -1,21 +1,20 @@
-version: '3.2'
-services:
-  postgres:
-    build:
-      args:
-        version: 0.0.1
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      - POSTGRES_USER=Phetho
-      - POSTGRES_DB=some_db
-      - POSTGRES_PASSWORD=1234
+# Use postgres/example user/password credentials
+version: '3.1'
 
-    networks:
-      - back-tier
-    
+services:
+
+  mydbhostname:
+    image: postgres:13.2
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Password1
+      POSTGRES_USER: phetho
+      POSTGRES_DB: pythondb
     ports:
-      - '5432:5432'
-networks:
-  back-tier:
-    driver: bridge
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8087:8080
