@@ -30,10 +30,12 @@ def test2():
 	response = json.dumps(x)
 	return response
 
-@app.route('/',methods=["POST"])
+@app.route('/pheto',methods=["POST"])
 def getvalues():
 	data = request.json
+
 	print(data)
+	print(data["FirstName"])
 	return jsonify(data)
 	
 
