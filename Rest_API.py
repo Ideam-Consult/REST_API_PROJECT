@@ -15,7 +15,6 @@ def test():
         "Surname": "xxxx",
         "Date of birth": "xxxxx"
     }
-
     # convert into JSON:
     response = json.dumps(x)
     return response
@@ -29,12 +28,13 @@ def getvalues():
     firstname = data["Firstname"]
     surname = data["Surname"]
     dateofbirth = data["Date of birth"]
-    # inserting the first name,surname and date of birth into the database
+    # inserting first name,surname and date of birth into the database
     cursor.execute('INSERT INTO Userinfo (FIRST_NAME,SURNAME,Date_of_birth) values(%s,%s,%s)',
                    (
                        firstname, surname, dateofbirth
                    ))
     conn.commit()
+    #just a message if the insertion to the database was a success
     print("success")
     return jsonify(data)
 
