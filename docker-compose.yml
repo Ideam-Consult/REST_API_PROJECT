@@ -1,20 +1,18 @@
-# Use postgres/example user/password credentials
-version: '3.1'
-
 services:
-
-  mydbhostname:
-    image: postgres:13.2
+  restapi:
+    build: rest-api
+    depends_on:
+      - db
+  web:
+    build: nginx
+    ports:
+    - "80:80"
+  db:
+    image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: Password1
-      POSTGRES_USER: phetho
-      POSTGRES_DB: pythondb
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: users
+      POSTGRES_USER: root
     ports:
-      - 5432:5432
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8087:8080
+    - 5432:5432
