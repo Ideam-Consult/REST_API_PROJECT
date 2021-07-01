@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS users(
 id SERIAL PRIMARY KEY,
 firstname VARCHAR(128),
 surname VARCHAR(128),
-Dateofbith VARCHAR(50)
+Dateofbirth VARCHAR(50)
 )ENGINE=INNODB;

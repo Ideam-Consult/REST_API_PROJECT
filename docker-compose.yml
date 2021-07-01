@@ -3,6 +3,10 @@ services:
     build: rest-api
     depends_on:
       - db
+    links:
+      - db
+    ports:
+    - 5000:5000
   web:
     build: nginx
     ports:
@@ -11,8 +15,8 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: pass
       POSTGRES_DB: users
-      POSTGRES_USER: root
+      POSTGRES_USER: rest
     ports:
     - 5432:5432
