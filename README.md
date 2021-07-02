@@ -44,5 +44,5 @@ I used SQLAlchemy to connect and here is the configuration i used.<br>
 -I also had the challenge that the applications were running well inside the containers but there seem to be no connection <br>
 I had to include <code>host="0.0.0.0"</code> in my api code.<br>
 #### Lessions I have learned
-As much has I knew what I should do, it was very important for me to first understand the purpose of every tool I am going to use.I had to understand what is a docker and why I am using dockers<br>
+As much has I knew what I should do, it was very important for me to first understand the purpose of every tool I am going to use.I had to understand what is a docker and why I am using docker containers <br>
 I had to understand what is an API and Why REST API.
