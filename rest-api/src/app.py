@@ -20,4 +20,4 @@ def post_user():
     #return the new user to the client
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0")
