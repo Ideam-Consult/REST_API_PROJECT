@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Rest API project with Python-flask and docker
 ##Project Outline
 The purpose of the project was to build a rest api that will store the firstname, surname and date of birth for a user when a post request is made.The api will also display all the users when get request is made.
@@ -54,4 +55,6 @@ I had to understand what is an API and Why REST API.
 
 
         
+=======
+>>>>>>> origin/main
 
